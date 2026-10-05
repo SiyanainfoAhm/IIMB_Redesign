@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Typography roles */
+  --font-heading: 'Fraunces', ui-serif, Georgia, serif;
+  --font-body: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-label: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+
+  /* Background — warm ivory */
+  --background-50: 0.991 0.005 90;
+  --background-100: 0.975 0.008 88;
+  --background-200: 0.950 0.011 86;
+  --background-300: 0.918 0.013 84;
+  --background-400: 0.876 0.014 84;
+  --background-500: 0.820 0.014 84;
+  --background-600: 0.740 0.013 84;
+  --background-700: 0.620 0.012 84;
+  --background-800: 0.470 0.010 84;
+  --background-900: 0.340 0.009 84;
+  --background-950: 0.220 0.008 84;
+
+  /* Foreground — warm ink */
+  --foreground-50: 0.968 0.004 85;
+  --foreground-100: 0.930 0.005 85;
+  --foreground-200: 0.872 0.007 85;
+  --foreground-300: 0.782 0.009 85;
+  --foreground-400: 0.664 0.011 85;
+  --foreground-500: 0.552 0.012 85;
+  --foreground-600: 0.452 0.013 85;
+  --foreground-700: 0.362 0.013 85;
+  --foreground-800: 0.288 0.012 85;
+  --foreground-900: 0.222 0.011 85;
+  --foreground-950: 0.158 0.010 85;
+
+  /* Primary — deep pine / emerald */
+  --primary-50: 0.972 0.024 162;
+  --primary-100: 0.934 0.045 161;
+  --primary-200: 0.874 0.072 161;
+  --primary-300: 0.786 0.095 162;
+  --primary-400: 0.660 0.100 163;
+  --primary-500: 0.530 0.092 164;
+  --primary-600: 0.452 0.080 164;
+  --primary-700: 0.378 0.067 164;
+  --primary-800: 0.305 0.054 164;
+  --primary-900: 0.245 0.043 164;
+  --primary-950: 0.170 0.031 164;
+
+  /* Accent — IIMB maroon / brick */
+  --accent-50: 0.972 0.016 27;
+  --accent-100: 0.936 0.034 27;
+  --accent-200: 0.882 0.062 27;
+  --accent-300: 0.796 0.108 26;
+  --accent-400: 0.670 0.158 26;
+  --accent-500: 0.530 0.176 26;
+  --accent-600: 0.455 0.162 26;
+  --accent-700: 0.392 0.140 26;
+  --accent-800: 0.322 0.116 26;
+  --accent-900: 0.262 0.092 26;
+  --accent-950: 0.185 0.068 26;
+
+  /* Secondary — ochre / gold */
+  --secondary-50: 0.977 0.021 82;
+  --secondary-100: 0.948 0.042 82;
+  --secondary-200: 0.898 0.072 81;
+  --secondary-300: 0.836 0.100 80;
+  --secondary-400: 0.766 0.122 79;
+  --secondary-500: 0.692 0.130 79;
+  --secondary-600: 0.600 0.116 78;
+  --secondary-700: 0.505 0.100 76;
+  --secondary-800: 0.412 0.082 74;
+  --secondary-900: 0.330 0.065 72;
+  --secondary-950: 0.235 0.048 70;
+}
+
+.dark {
+  --background-50: 0.185 0.012 165;
+  --background-100: 0.235 0.014 165;
+  --background-200: 0.290 0.016 165;
+  --background-300: 0.360 0.016 165;
+  --background-400: 0.470 0.014 165;
+  --background-500: 0.600 0.012 165;
+  --background-600: 0.700 0.012 165;
+  --background-700: 0.780 0.012 165;
+  --background-800: 0.860 0.012 165;
+  --background-900: 0.920 0.012 165;
+  --background-950: 0.965 0.010 165;
+
+  --foreground-50: 0.158 0.010 85;
+  --foreground-100: 0.222 0.011 85;
+  --foreground-200: 0.288 0.012 85;
+  --foreground-300: 0.362 0.013 85;
+  --foreground-400: 0.452 0.013 85;
+  --foreground-500: 0.552 0.012 85;
+  --foreground-600: 0.664 0.011 85;
+  --foreground-700: 0.782 0.009 85;
+  --foreground-800: 0.872 0.007 85;
+  --foreground-900: 0.930 0.005 85;
+  --foreground-950: 0.968 0.004 85;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: oklch(var(--background-50));
+  color: oklch(var(--foreground-950));
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: oklch(var(--primary-500) / 0.25);
+  color: oklch(var(--foreground-950));
+}
+
+/* Utility: hide scrollbar for horizontal chip rails */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Reserved field for form anti-spam (kept out of the visible flow) */
+.field-offscreen {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
